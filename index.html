@@ -14,7 +14,7 @@
     .loader {
       width: 50px;
       margin: auto;
-      aspect-ratio:1;
+      aspect-ratio: 1;
       top: 0;
       left: 0;
       bottom: 0;
@@ -187,9 +187,10 @@
 
     }
   </style>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" /><style>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=block"
+    data-tag="font" />
+  <style>
     body::-webkit-scrollbar {
       width: 0;
       z-index: 100;
@@ -207,21 +208,23 @@
 
 <body>
   <script>
-    $(document).ready(function() {
-  $('#home').css('display', 'none').delay(1000);
-  $('#home').fadeIn(500);
+    window.addEventListener('load', function () {
+      $('#home').css('display', 'none').delay(1000);
+      $('#home').fadeIn(500);
+    })
+    $(document).ready(function () {
 
-  $('.link').click(function() {
-    event.preventDefault();
+      $('.link').click(function () {
+        event.preventDefault();
 
-    newLocation = this.href;
-    $('#home').fadeOut(1000, newPage);
-  });
+        newLocation = this.href;
+        $('#home').fadeOut(1000, newPage);
+      });
 
-  function newPage() {
-    window.location = newLocation;
-  }
-});
+      function newPage() {
+        window.location = newLocation;
+      }
+    });
   </script>
   <div class="loader"></div>
   <link rel="stylesheet" href="./style.css" />
@@ -232,19 +235,20 @@
         <div class="home-desktop-navigation">
           <nav class="home-centered">
             <div class="home-left">
-              <a href="./" class="link"><img alt="HearPhotos" src="public/logo-whitebg-text-web-200h.webp" loading="lazy" class="home-logo1" /></a>
+              <a href="./" class="link"><img alt="HearPhotos" src="public/logo-whitebg-text-web-200h.webp"
+                  loading="lazy" class="home-logo1" /></a>
               <div class="home-links1"></div>
             </div>
             <div class="home-get-started">
-              <a href="/submit" rel="noreferrer noopener" class="link"><span class="home-text03">SUBMIT PHOTOS</span></a>
+              <a href="/submit" rel="noreferrer noopener" class="link"><span class="home-text03">SUBMIT
+                  PHOTOS</span></a>
             </div>
           </nav>
         </div>
       </div>
       <section class="home-hero">
         <header class="home-header">
-          <img alt="Photos of the Month" src="public/external/pom-2023-11-1400w-700h.jpg" loading="lazy"
-            class="home-image" />
+          <img alt="Photos of the Month" src="public/external/pom-2023-11-1400w-700h.jpg" class="home-image" />
           <span class="home-text04">
             Photo of the Month, By&nbsp;FelixMittermeier
           </span>
@@ -345,9 +349,9 @@
           <div class="home-pills-container">
             <div class="home-pills">
               <div class="home-container5">
-                <a href="https://instagram.com/hearphotos" target="_blank" rel="noreferrer noopener" class="home-link4 link">
-                  <img alt="Instagram" src="public/logos/ig-logo.webp" loading="lazy"
-                    class="home-pasted-image" />
+                <a href="https://instagram.com/hearphotos" target="_blank" rel="noreferrer noopener"
+                  class="home-link4 link">
+                  <img alt="Instagram" src="public/logos/ig-logo.webp" loading="lazy" class="home-pasted-image" />
                 </a>
                 <a href="https://www.musilink.org/" target="_blank" rel="noreferrer noopener" class="home-link5 link">
                   Musilink.ORG
@@ -364,7 +368,9 @@
         <div class="home-separator"></div>
         <div class="home-container7">
           <span class="home-text27">
-            <span>© 2023-<script>document.write( new Date().getFullYear() );</script> HearPhotos by Musilink.ORG</span>
+            <span>© 2023-
+              <script>document.write(new Date().getFullYear());</script> HearPhotos by Musilink.ORG
+            </span>
             <br />
             <span>All Rights Reserved.</span>
           </span>
