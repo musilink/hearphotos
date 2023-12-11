@@ -248,21 +248,21 @@
     });
   </script>
   <div class="loader"></div>
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="./form.css" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../form.css" />
   <div>
-    <link href="../index.css" rel="stylesheet" />
+    <link href="../../index.css" rel="stylesheet" />
     <div class="home-container" id="home" style="display:none">
       <div class="home-menu">
         <div class="home-desktop-navigation">
           <nav class="home-centered">
             <div class="home-left">
-              <a href="../" class="link"><img alt="HearPhotos" src="../public/logo-whitebg-text-web-200h.webp"
+              <a href="../../" class="link"><img alt="HearPhotos" src="../../public/logo-whitebg-text-web-200h.webp"
                   loading="lazy" class="home-logo1" /></a>
               <div class="home-links1"></div>
             </div>
 
-            <a href="../" rel="noreferrer noopener" class="link">
+            <a href="../../" rel="noreferrer noopener" class="link">
               <div class="home-get-started">
                 <span class="home-text03">ABOUT US</span>
               </div>
@@ -271,125 +271,50 @@
         </div>
       </div>
       <section class="home-hero" style="padding-bottom:5vh !important;padding-top:10vh !important;">
+        
+        <img src="../../public/get-discovered-hearphotos.webp" style="height:30vh">
         <header class="home-header" style="max-width:800px">
           <span class="home-text04">
             HearPhotos by Musilink.ORG
           </span>
-          <h1 class="home-text05">Submit Photos</h1>
-          <p class="home-text06">Share and let others hear your photos</p>
+          <h1 class="home-text05" id="suc">Success</h1>
+          <p class="home-text06">Your photo has been submitted successfully</p>
+          <br><br>
+          <p class="home-text03">Please note down your submission ID:</p>
+          <p class="home-text05" id="subid">ERROR</p>
+          <br><br>
+          <p class="home-text04" id="timestamp">ERROR</p>
+          <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            if (urlParams.has('submitted') == 1) {
+              const subid = urlParams.get('id')
+              document.getElementById("subid").innerHTML = subid;
+              let options = {
+                timeZone: 'UTC',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                hourNo0: false
+              },
+                formatter = new Intl.DateTimeFormat([], options);
+
+              console.log(formatter.format(new Date()));
+              document.getElementById("timestamp").innerHTML = formatter.format(new Date())+' UTC';
+            } else {
+              document.getElementById("suc").innerHTML = 'Redirecting...';
+              window.location = ('../../')
+            }
+          </script>
         </header>
-      </section>
-      <section class="home-banners">
-        <div class="home-banner-manage">
-          <div class="home-container4" style="max-width:800px;">
-            <div class="home-left1" style="width:100% !important; max-width:none;margin:auto">
-              <span class="home-text17" style="width:100%; max-width:none;margin-bottom:2vh">
-
-                <form
-                  action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSc9gYRcwnHsIeiCXqOxYGL3604iE5QSs9M8XoKMxCYY97L65w/formResponse"
-                  style="width:100%; max-width:none">
-
-                  <span class="sub-title">Basic Information</span>
-                  <div class="nice-form-group">
-                    <label>Name/Nickname</label>
-                    <small>How would you like to be credited?</small>
-                    <input name="entry.1781500597" type="text" placeholder="Your name" required />
-                  </div>
-                  <div class="nice-form-group">
-                    <label>Email</label>
-                    <small>How can we contact you?</small>
-                    <input name="entry.1640447617" type="email" placeholder="Your email" value="" required />
-                  </div>
-                  <span class="sub-title"><br>About your photo</span>
-                  <div class="nice-form-group">
-                    <label>Category</label>
-                    <small>What is your photo about?</small>
-                    <select name="entry.1078004677" required>
-                      <option value="" disabled selected>Select a category...</option>
-                      <option>Nature/Landscape photography</option>
-                      <option>Astrophotography</option>
-                      <option>Macro photography</option>
-                      <option>Aerial/Drone photography</option>
-                      <option>Portrait photography</option>
-                      <option>Sports photography</option>
-                      <option>Street photography</option>
-                      <option>Mobile phone photography</option>
-                      <option>Other photography</option>
-                    </select>
-                  </div>
-                  <div class="nice-form-group">
-                    <label>Your photo submission</label>
-                    <small>Upload your photo anywhere and share the link with us</small>
-                    <input name="entry.2040870261" type="url" placeholder="e.g. Google Drive, Dropbox, Proton Drive"
-                      value="" required />
-                  </div>
-                  <div class="nice-form-group">
-                    <label>Story behind the photo</label>
-                    <small>Optional. Share and let us hear more about this photo</small>
-                    <textarea name="entry.1936133510" rows="5" value=""></textarea>
-                  </div>
-                  <div class="nice-form-group">
-                    <label>Your submission ID</label>
-                    <small>Please note down for future reference.</small>
-                    <input name="entry.80280" type="text" id="sub_id" placeholder="ERROR: Please refresh page." value=""
-                      required readonly />
-                    <script>
-                      var subid = (Math.random() + 1).toString(36).substring(5).toUpperCase();
-                      document.getElementById("sub_id").value = subid;
-                    </script>
-                  </div>
-                  <span class="sub-title"><br>Additional information</span>
-                  <div class="nice-form-group">
-                    <label>Notes to HearPhotos</label>
-                    <small>Optional. This field is only read by HearPhotos</small>
-                    <textarea name="entry.1622702428" rows="3" value=""></textarea>
-                  </div>
-                  <div class="nice-form-group">
-                    <label>Regulations on HearPhotos</label>
-                    <textarea rows="5" disabled>1. Inappropriate, sexual, naked or other similar contents are strictly prohibited.
-2. Political and controversial contents are less likely to be chosen.
-3. Photos involving a human/portrait should be submitted only after licensing from the model. Models under the age of 16 are strictly prohibited. Models under 18 requires guardians' valid consent.
-4. HearPhotos may publish and use your photo without prior notification.
-5. HearPhotos reserve the right to make final decisions related to HearPhotos.</textarea>
-
-                  </div>
-                  <div class="nice-form-group">
-                    <label>Photo licensing</label>
-                    <textarea rows="7" disabled>1. By submitting your photos to HearPhotos, participants agree to grant HearPhotos and Musilink.ORG free of charge the non-exclusive right to use the photo in any manner and media, including without limitation, the right to publish, adapt, distribute, copy, display or translate in printed or electronic media even if they are not the winning entries.
-2. The submitted photo(s) may not be licensed or used for commercial purpose, including but not limited to, stock image websites and commercials.
-3. You (the photographer) is solely responsible for the photo(s) taken. HearPhotos does not bear responsibility for any of the photos submitted.
-4. HearPhotos reserve the right to make final decisions related to HearPhotos.</textarea>
-                  </div>
-                  <div class="checkbox-group required">
-                    <fieldset class="nice-form-group">
-                      <div class="nice-form-group">
-                        <input name="entry.1229364339" value="Yes" type="checkbox" id="check-1" checked />
-                        <label for="check-1">I agree to HearPhotos Regulations and Licensing Policy.
-                          <small>If you do not agree, please leave this form without submitting.</small>
-                        </label>
-                      </div>
-                    </fieldset>
-                  </div>
-              </span>
-              <br>
-                <button class="home-get-started2 template-button" type="submit" id="sub-but">
-                  <span class="home-link1">
-                    <p id="sub-text">Submit my photo</p>
-                  </span>
-                </button>
-              </form>
-              </div>
-            </div>
-          </div>
-        <div class="home-centered-container1">
-          <div class="home-heading">
-            <span class="sub-title" id="form-version">HPSF-231211002</span>
-          </div>
-        </div>
       </section>
       <footer class="home-footer">
         <div class="home-container6">
-          <img alt="HearPhotos" src="../public/logo-whitebg-text-web-200h.webp" class="home-branding" />
+          <img alt="HearPhotos" src="../../public/logo-whitebg-text-web-200h.webp" class="home-branding" />
         </div>
         <div class="home-separator"></div>
         <div class="home-container7">
@@ -406,23 +331,4 @@
   </div>
 </body>
 
-<script>
-  $('#check-1').change(function() {
-    $("#sub-but").toggle();
-  });
-  $("form").on("submit", function (e) {
-    var dataString = $(this).serialize();
-    
-    $.ajax({
-      type: "POST",
-      url: "https://docs.google.com/forms/u/3/d/e/1FAIpQLSc9gYRcwnHsIeiCXqOxYGL3604iE5QSs9M8XoKMxCYY97L65w/formResponse",
-      data: dataString,
-      complete: function(){
-        window.location = '../?submitted=1&id=' + subid;
-      }
-    });
-    e.preventDefault();
-    document.getElementById("sub-text").innerHTML = "Submitting...";
-  });
-  </script>
 </html>
