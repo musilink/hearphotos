@@ -209,9 +209,10 @@
 
     }
   </style>
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=block"
-    data-tag="font" as="font" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Poppins&display=block" rel="stylesheet">
+
   <style>
     body::-webkit-scrollbar {
       width: 0;
@@ -292,20 +293,21 @@
 
                   <span class="sub-title">Basic Information</span>
                   <div class="nice-form-group">
-                    <label>Name/Nickname</label>
+                    <label for="entry.1781500597">Name/Nickname</label>
                     <small>How would you like to be credited?</small>
-                    <input name="entry.1781500597" type="text" placeholder="Your name" required />
+                    <input name="entry.1781500597" id="entry.1781500597" type="text" placeholder="Your name" required />
                   </div>
                   <div class="nice-form-group">
-                    <label>Email</label>
+                    <label for="entry.1640447617">Email</label>
                     <small>How can we contact you?</small>
-                    <input name="entry.1640447617" type="email" placeholder="Your email" value="" required />
+                    <input name="entry.1640447617" id="entry.1640447617" type="email" placeholder="Your email" value=""
+                      required />
                   </div>
                   <span class="sub-title"><br>About your photo</span>
                   <div class="nice-form-group">
-                    <label>Category</label>
+                    <label for="entry.1078004677">Category</label>
                     <small>What is your photo about?</small>
-                    <select name="entry.1078004677" required>
+                    <select name="entry.1078004677" id="entry.1078004677" required>
                       <option value="" disabled selected>Select a category...</option>
                       <option>Nature/Landscape photography</option>
                       <option>Astrophotography</option>
@@ -319,18 +321,18 @@
                     </select>
                   </div>
                   <div class="nice-form-group">
-                    <label>Your photo submission</label>
-                    <small>Upload your photo anywhere and share the link with us</small>
-                    <input name="entry.2040870261" type="url" placeholder="e.g. Google Drive, Dropbox, Proton Drive"
-                      value="" required />
+                    <label for="entry.2040870261">Your photo submission</label>
+                    <small>Share the link to your image</small>
+                    <input name="entry.2040870261" id="entry.2040870261" type="url"
+                      placeholder="e.g. Google Drive, Dropbox, Proton Drive" value="" required />
                   </div>
                   <div class="nice-form-group">
-                    <label>Story behind the photo</label>
-                    <small>Optional. Share and let us hear more about this photo</small>
-                    <textarea name="entry.1936133510" rows="5" value=""></textarea>
+                    <label for="entry.1936133510">Story behind the photo</label>
+                    <small>Optional.</small>
+                    <textarea name="entry.1936133510" id="entry.1936133510" rows="5" value=""></textarea>
                   </div>
                   <div class="nice-form-group">
-                    <label>Your submission ID</label>
+                    <label for="sub_id">Your submission ID</label>
                     <small>Please note down for future reference.</small>
                     <input name="entry.80280" type="text" id="sub_id" placeholder="ERROR: Please refresh page." value=""
                       required readonly />
@@ -341,13 +343,19 @@
                   </div>
                   <span class="sub-title"><br>Additional information</span>
                   <div class="nice-form-group">
-                    <label>Notes to HearPhotos</label>
+                    <label for="entry.1622702428">Notes to HearPhotos</label>
                     <small>Optional. This field is only read by HearPhotos</small>
-                    <textarea name="entry.1622702428" rows="3" value=""></textarea>
+                    <textarea name="entry.1622702428" id="entry.1622702428" rows="3" value=""></textarea>
                   </div>
                   <div class="nice-form-group">
-                    <label>Regulations on HearPhotos</label>
-                    <textarea rows="5" disabled>1. Inappropriate, sexual, naked or other similar contents are strictly prohibited.
+                    <label for="entry.533412256">Color Preference</label>
+                    <small>Optional. Preferred color for framing</small>
+                    <input name="entry.533412256" type="color" id="entry.533412256"
+                      placeholder="e.g. Google Drive, Dropbox, Proton Drive" value="#FFFFFF" />
+                  </div>
+                  <div class="nice-form-group">
+                    <label for="hearphotos_reg">Regulations on HearPhotos</label>
+                    <textarea rows="5" id="hearphotos_reg" disabled>1. Inappropriate, sexual, naked or other similar contents are strictly prohibited.
 2. Political and controversial contents are less likely to be chosen.
 3. Photos involving a human/portrait should be submitted only after licensing from the model. Models under the age of 16 are strictly prohibited. Models under 18 requires guardians' valid consent.
 4. HearPhotos may publish and use your photo without prior notification.
@@ -355,8 +363,8 @@
 
                   </div>
                   <div class="nice-form-group">
-                    <label>Photo licensing</label>
-                    <textarea rows="7" disabled>1. By submitting your photos to HearPhotos, participants agree to grant HearPhotos and Musilink.ORG free of charge the non-exclusive right to use the photo in any manner and media, including without limitation, the right to publish, adapt, distribute, copy, display or translate in printed or electronic media even if they are not the winning entries.
+                    <label for="hearphotos_license">Photo licensing</label>
+                    <textarea rows="7" id="hearphotos_license" disabled>1. By submitting your photos to HearPhotos, participants agree to grant HearPhotos and Musilink.ORG free of charge the non-exclusive right to use the photo in any manner and media, including without limitation, the right to publish, adapt, distribute, copy, display or translate in printed or electronic media even if they are not the winning entries.
 2. The submitted photo(s) may not be licensed or used for commercial purpose, including but not limited to, stock image websites and commercials.
 3. You (the photographer) is solely responsible for the photo(s) taken. HearPhotos does not bear responsibility for any of the photos submitted.
 4. HearPhotos reserve the right to make final decisions related to HearPhotos.</textarea>
@@ -373,18 +381,18 @@
                   </div>
               </span>
               <br>
-                <button class="home-get-started2 template-button" type="submit" id="sub-but">
-                  <span class="home-link1">
-                    <p id="sub-text">Submit my photo</p>
-                  </span>
-                </button>
+              <button class="home-get-started2 template-button" type="submit" id="sub-but">
+                <span class="home-link1">
+                  <p id="sub-text">Submit my photo</p>
+                </span>
+              </button>
               </form>
-              </div>
             </div>
           </div>
+        </div>
         <div class="home-centered-container1">
           <div class="home-heading">
-            <span class="sub-title" id="form-version">HPSF-231211003</span>
+            <span class="sub-title" id="form-version">HPSF-231214004</span>
           </div>
         </div>
       </section>
@@ -395,7 +403,7 @@
         <div class="home-separator"></div>
         <div class="home-container7">
           <span class="home-text27">
-            <span>© 2023-
+            <span>© 2023 -
               <script>document.write(new Date().getFullYear());</script> HearPhotos by Musilink.ORG
             </span>
             <br />
@@ -408,22 +416,28 @@
 </body>
 
 <script>
-  $('#check-1').change(function() {
+  $('#check-1').change(function () {
     $("#sub-but").toggle();
   });
   $("form").on("submit", function (e) {
     var dataString = $(this).serialize();
-    
+
     $.ajax({
       type: "POST",
       url: "https://docs.google.com/forms/u/3/d/e/1FAIpQLSc9gYRcwnHsIeiCXqOxYGL3604iE5QSs9M8XoKMxCYY97L65w/formResponse",
       data: dataString,
-      complete: function(){
-        window.location = './success/?submitted=1&id=' + subid;
+      complete: function () {
+        $('#home').fadeOut(1000, newPage1);
+
+        function newPage1() {
+          window.location = './success/?submitted=1&id=' + subid;
+        }
+
       }
     });
     e.preventDefault();
     document.getElementById("sub-text").innerHTML = "Submitting...";
   });
-  </script>
+</script>
+
 </html>
