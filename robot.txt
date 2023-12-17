@@ -1,0 +1,8 @@
+User-agent:*
+Disallow:
+
+User-agent: Googlebot-Image
+Disallow: /public/get-discovered-hearphotos.webp
+Disallow: /public/unique-hearphotos.webp
+
+Sitemap: https://hearphotos.musilink.org/sitemap.xml
