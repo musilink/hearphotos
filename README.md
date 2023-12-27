@@ -1,12 +1,15 @@
 # HearPhotos
-The source code of HearPhotos website. Featuring responsive and simple, yet modern one-page design.
+The source code of HearPhotos website. Featuring responsive and simple, yet modern design.
 
 ## Features
 - Responsive Design
 - Modern Design
-- Photo of the Month feature
+- Integrated submission page
+- Photo of the Month featured
 - Modern illustration
-- Simple deployment! (Simple static one-page website)
+- Minimal loader animation
+- Large customization room
+- Simple deployment (static website)
 - More for you to suggest!
 
 ## Licensing
